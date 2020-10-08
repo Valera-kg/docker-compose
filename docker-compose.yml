@@ -1,0 +1,42 @@
+version: '3'
+services:
+  db:
+    container_name: h2
+    image: h2non/imaginary:1.2
+    restart: always
+    ports:
+      - 9080:9080
+    networks:
+      - shared-network
+    volumes:
+      - ./:/data/db
+      - shared-volume:/data/share
+    healthcheck:
+      test: "exit 0"
+
+  user-service:
+    container_name: user-web-service
+    build: user-service/
+    image: user-service
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - shared-network
+      - private-network
+    volumes:
+      - ./:/data/user
+      - shared-volume:/data/share
+    healthcheck:
+      test: "exit 0"
+
+volumes:
+  shared-volume:
+
+networks:
+  shared-network: {}
+  private-network: {}
+
+
