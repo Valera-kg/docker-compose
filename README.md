@@ -13,7 +13,7 @@
 
 ## Иллюстрации
 
-![](conteiner_vs_VM.png) 
+![](zw-readme/conteiner_vs_VM.png) 
  
 
 ## Описание приложения
@@ -83,9 +83,9 @@
     </li>
 </ul>
 
-![](ip_machine.png) 
+![](zw-readme/ip_machine.png) 
 
-![](brouser.png) 
+![](zw-readme/brouser.png) 
 
 7 - Другие консольные команды.
 <ul>
